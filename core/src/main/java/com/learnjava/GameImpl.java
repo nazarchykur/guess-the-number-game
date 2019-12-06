@@ -3,12 +3,11 @@ package com.learnjava;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component
+//@Component
 public class GameImpl implements Game {
 
     // == constants ==
@@ -42,17 +41,6 @@ public class GameImpl implements Game {
     public void preDestroy() {
         LOGGER.info("in game preDestroy");
     }
-
-    // == constructors ==
-//    public GameImpl(NumberGenerator numberGenerator) {
-//        this.numberGenerator = numberGenerator;
-//    }
-
-    // == setters ==
-    // delete setter because we use autowiring
-//    public void setNumberGenerator(NumberGenerator numberGenerator) {
-//        this.numberGenerator = numberGenerator;
-//    }
 
     // == public methods ==
     @Override
@@ -115,7 +103,6 @@ public class GameImpl implements Game {
     public boolean isGameLost() {
         return !isGameWon() && remainingGuesses <= 0;
     }
-
 
 
     // == private methods -==
