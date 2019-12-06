@@ -25,11 +25,11 @@ public class Main {
         // log generated number
         LOGGER.info("number = {}", number);
 
-        // get number generator bean from context (container)
-        Game game = context.getBean(Game.class);
+        // get msg generator bean from context (container)
+        MessageGenerator messageGenerator = context.getBean(MessageGenerator.class);
 
-        // or we can use init-method for bean id="game" in xml file
-        game.reset();
+        LOGGER.info("getMainMessage = {}",messageGenerator.getMainMessage());
+        LOGGER.info("getResultMessage = {}",messageGenerator.getResultMessage());
 
         // close context
         context.close();
