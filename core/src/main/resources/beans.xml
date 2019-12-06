@@ -7,25 +7,30 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:annotation-config/>
 
-    <!-- bean definitions here -->
-    <bean id="numberGenerator" class="com.learnjava.NumberGeneratorImpl" />
 
-    <!-- if we use constructor  -->
+    <context:component-scan base-package="com.learnjava"/>
+
+<!--    &lt;!&ndash;    del all because now we use context:component-scan &ndash;&gt;-->
+<!--    &lt;!&ndash;    <context:annotation-config/>&ndash;&gt;-->
+
+<!--    &lt;!&ndash; bean definitions here &ndash;&gt;-->
+<!--    <bean id="numberGenerator" class="com.learnjava.NumberGeneratorImpl" />-->
+
+<!--    &lt;!&ndash; if we use constructor  &ndash;&gt;-->
+<!--&lt;!&ndash;    <bean id="game" class="com.learnjava.GameImpl">&ndash;&gt;-->
+<!--&lt;!&ndash;        <constructor-arg ref="numberGenerator"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    </bean>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    or we can use init-method to call reset method&ndash;&gt;-->
+<!--&lt;!&ndash;    <bean id="game" class="com.learnjava.GameImpl" init-method="reset">... &ndash;&gt;-->
 <!--    <bean id="game" class="com.learnjava.GameImpl">-->
-<!--        <constructor-arg ref="numberGenerator"/>-->
+<!--&lt;!&ndash;        because we use autowiring&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="numberGenerator" ref="numberGenerator"/>&ndash;&gt;-->
 <!--    </bean>-->
 
-<!--    or we can use init-method to call reset method-->
-<!--    <bean id="game" class="com.learnjava.GameImpl" init-method="reset">... -->
-    <bean id="game" class="com.learnjava.GameImpl">
-<!--        because we use autowiring-->
-<!--        <property name="numberGenerator" ref="numberGenerator"/>-->
-    </bean>
-
-<!--    we use autowiring instead -->
-<!--    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
-    
+<!--&lt;!&ndash;    we use autowiring instead &ndash;&gt;-->
+<!--&lt;!&ndash;    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>&ndash;&gt;-->
+<!--    -->
     
 </beans>
