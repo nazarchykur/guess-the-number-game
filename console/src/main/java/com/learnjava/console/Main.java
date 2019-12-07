@@ -1,11 +1,12 @@
-package com.learnjava;
+package com.learnjava.console;
 
-import org.apache.commons.logging.LogFactory;
+import com.learnjava.AppConfig;
+import com.learnjava.MessageGenerator;
+import com.learnjava.NumberGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
 
