@@ -69,7 +69,7 @@ public class GameImpl implements Game {
     }
 
     @Override
-    public int getRemainingFuesses() {
+    public int getRemainingGuesses() {
         return remainingGuesses;
     }
 
