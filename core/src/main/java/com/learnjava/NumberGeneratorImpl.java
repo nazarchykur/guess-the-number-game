@@ -12,16 +12,8 @@ public class NumberGeneratorImpl implements NumberGenerator {
     // == fields ==
     private final Random random = new Random();
 
-    //    @Autowired
-//    @MaxNumber
-//    private int maxNumber;
-//
-//    @Autowired
-//    @MinNumber
-//    private int minNumber;
-
-    private int maxNumber;
-    private int minNumber;
+    private final int maxNumber;
+    private final int minNumber;
 
     // == constructor ==
     public NumberGeneratorImpl(@MaxNumber int maxNumber, @MinNumber int minNumber) {
