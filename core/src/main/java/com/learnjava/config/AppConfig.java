@@ -1,10 +1,13 @@
-package com.learnjava;
+package com.learnjava.config;
 
+import com.learnjava.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Component;
 
 @Component
+@Import(GameConfig.class)
 @ComponentScan(basePackages = "com.learnjava")
 public class AppConfig {
 
