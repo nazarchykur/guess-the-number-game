@@ -12,11 +12,6 @@ import org.springframework.stereotype.Component;
 public class AppConfig {
 
     @Bean
-    public NumberGenerator numberGenerator(){
-        return new NumberGeneratorImpl();
-    }
-
-    @Bean
     public Game game() {
         return new GameImpl();
     }
