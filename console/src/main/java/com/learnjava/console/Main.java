@@ -11,8 +11,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-//private final Logger log = LoggerFactory.getLogger(Main.class);
-
         log.info("Guess The Number Game");
 
         // create context (container)
