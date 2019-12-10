@@ -13,6 +13,7 @@ import java.util.Scanner;
 @Component
 public class ConsoleNumberGuess {
 
+
       // == fields ==
     private final Game game;
 
