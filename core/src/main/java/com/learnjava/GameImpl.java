@@ -12,18 +12,12 @@ import javax.annotation.PreDestroy;
 public class GameImpl implements Game {
 
     // == constants ==
-    private static final Logger LOGGER = LoggerFactory.getLogger(GameImpl.class);
+    private static final Logger log = LoggerFactory.getLogger(GameImpl.class);
 
     // == fields ==
-
     private final NumberGenerator numberGenerator;
-    private final int guessCount;
 
-    @Autowired
-    public GameImpl(NumberGenerator numberGenerator, @GuessCount int guessCount) {
-        this.numberGenerator = numberGenerator;
-        this.guessCount = guessCount;
-    }
+    private final int guessCount;
 
     private int number;
     private int guess;
@@ -31,6 +25,13 @@ public class GameImpl implements Game {
     private int biggest;
     private int remainingGuesses;
     private boolean validNumberRange = true;
+
+    // == constructor ==
+    @Autowired
+    public GameImpl(NumberGenerator numberGenerator, @GuessCount int guessCount) {
+        this.numberGenerator = numberGenerator;
+        this.guessCount = guessCount;
+    }
 
     // == init ==
     @PostConstruct
@@ -41,13 +42,12 @@ public class GameImpl implements Game {
         remainingGuesses = guessCount;
         biggest = numberGenerator.getMaxNumber();
         number = numberGenerator.next();
-        LOGGER.debug("the number is {}", number);
+        log.debug("the number is {}", number);
     }
 
-    // == preDestroy ==
     @PreDestroy
     public void preDestroy() {
-        LOGGER.info("in game preDestroy");
+        log.info("in Game preDestroy()");
     }
 
     // == public methods ==
@@ -91,14 +91,16 @@ public class GameImpl implements Game {
 
         checkValidNumberRange();
 
-        if (validNumberRange) {
-            if (guess > number) {
-                biggest = guess - 1;
+        if(validNumberRange) {
+            if(guess > number) {
+                biggest = guess -1;
             }
-            if (guess < number) {
+
+            if(guess < number) {
                 smallest = guess + 1;
             }
         }
+
         remainingGuesses--;
     }
 
@@ -117,8 +119,7 @@ public class GameImpl implements Game {
         return !isGameWon() && remainingGuesses <= 0;
     }
 
-
-    // == private methods -==
+    // == private methods ==
     private void checkValidNumberRange() {
         validNumberRange = (guess >= smallest) && (guess <= biggest);
     }

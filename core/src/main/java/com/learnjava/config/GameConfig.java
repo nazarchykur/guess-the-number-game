@@ -14,15 +14,16 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource("classpath:config/game.properties")
 public class GameConfig {
 
-    // == fields =
+    // == fields ==
     @Value("${game.maxNumber:20}")
     private int maxNumber;
 
     @Value("${game.guessCount:5}")
-    public int guessCount;
+    private int guessCount;
 
     @Value("${game.minNumber:5}")
     private int minNumber;
+
 
     // == bean methods ==
     @Bean
@@ -36,6 +37,7 @@ public class GameConfig {
     public int guessCount() {
         return guessCount;
     }
+
     @Bean
     @MinNumber
     public int minNumber() {
