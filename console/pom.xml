@@ -17,7 +17,6 @@
             <artifactId>core</artifactId>
             <version>${project.version}</version>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -27,6 +26,6 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-
     </build>
+
 </project>
