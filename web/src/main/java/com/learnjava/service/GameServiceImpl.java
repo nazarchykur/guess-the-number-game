@@ -1,4 +1,4 @@
-package com.learnsboot.service;
+package com.learnjava.service;
 
 import com.learnjava.Game;
 import com.learnjava.MessageGenerator;
@@ -16,6 +16,7 @@ public class GameServiceImpl implements GameService {
     private final Game game;
     private final MessageGenerator messageGenerator;
 
+    // == constructors ==
     @Autowired
     public GameServiceImpl(Game game, MessageGenerator messageGenerator) {
         this.game = game;

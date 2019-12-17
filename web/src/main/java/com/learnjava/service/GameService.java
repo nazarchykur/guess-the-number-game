@@ -1,4 +1,4 @@
-package com.learnsboot.service;
+package com.learnjava.service;
 
 public interface GameService {
 
@@ -11,4 +11,5 @@ public interface GameService {
     void checkGuess(int guess);
 
     void reset();
+
 }

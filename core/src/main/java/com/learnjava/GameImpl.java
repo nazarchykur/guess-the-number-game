@@ -4,8 +4,6 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -20,14 +18,18 @@ public class GameImpl implements Game {
     // == fields ==
     @Getter(AccessLevel.NONE)
     private final NumberGenerator numberGenerator;
+
     private final int guessCount;
+
     private int number;
-    @Setter
-    private int guess;
+
     private int smallest;
     private int biggest;
     private int remainingGuesses;
     private boolean validNumberRange = true;
+
+    @Setter
+    private int guess;
 
     // == constructor ==
     @Autowired
@@ -54,7 +56,6 @@ public class GameImpl implements Game {
     }
 
     // == public methods ==
-
     @Override
     public void check() {
 
@@ -71,11 +72,6 @@ public class GameImpl implements Game {
         }
 
         remainingGuesses--;
-    }
-
-    @Override
-    public boolean isValidNumberRange() {
-        return validNumberRange;
     }
 
     @Override

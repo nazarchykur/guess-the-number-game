@@ -1,6 +1,6 @@
-package com.learnsboot.config;
+package com.learnjava.config;
 
-import com.learnsboot.util.ViewNames;
+import com.learnjava.util.ViewNames;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
