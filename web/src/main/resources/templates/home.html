@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="~{fragments/head :: headFragment}">
     <meta charset="UTF-8">
     <title>Guess the Number Game</title>
 </head>
@@ -9,7 +9,8 @@
     <h1>Welcome to Guess the Number Game</h1>
     <h3>
         <a th:href="@{__${T(com.learnjava.util.GameMappings).PLAY}__}"
-           th:text="Play">
+           th:text="Play"
+            href="play.html">
             Click to Play
         </a>
     </h3>
